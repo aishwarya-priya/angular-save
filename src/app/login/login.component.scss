@@ -1,0 +1,31 @@
+mat-card {
+  max-width: 300px;
+  margin: 2em auto;
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+mat-form-field {
+  display: relative;
+  padding: 0;
+}
+.title-login {
+  color: #4c0899;
+}
+.error {
+  font-size: 10px;
+}
+.label {
+  padding: 5px 0;
+}
+.mat-form-field-appearance-outline .mat-form-field-label {
+  top: 2.4em !important;
+  margin-top: -0.25em;
+}
+mat-card {
+  background-color: #695da7;
+}
+// mat-form-field {
+//   background-color: white;
+// }

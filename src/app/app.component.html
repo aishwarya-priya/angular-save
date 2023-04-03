@@ -1,0 +1,16 @@
+<!-- <app-insurance-provider></app-insurance-provider> -->
+<!-- <app-quality-check-home></app-quality-check-home> -->
+<!-- <app-create-register></app-create-register> -->
+<div *ngIf="isLogin===false">             
+     <mat-toolbar >
+    <span>My Application</span>
+    <span class="example-spacer"></span>
+
+    <span><mat-icon (click)="logOut()">logout</mat-icon></span>
+  </mat-toolbar>
+      
+</div>
+<router-outlet #o="outlet"></router-outlet>
+<!-- Copyright 2023 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->

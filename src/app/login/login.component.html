@@ -1,0 +1,51 @@
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="onFormSubmit()" autocomplete="off">
+    <h2 class="title-login">LOGIN</h2>
+    <div>
+      <mat-form-field appearance="fill">
+        <mat-label class="label">User Name</mat-label>
+        <input
+          matInput
+          placeholder="Enter username"
+          formControlName="UserName"
+          required
+        />
+        <!-- <mat-icon matSufix>perm_identity</mat-icon> -->
+        <mat-error> Please provide a valid User name </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label class="label">Password</mat-label>
+        <!-- <mat-icon matPrefix>lock</mat-icon> -->
+
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          placeholder="Enter password"
+          formControlName="Password"
+          required
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+        </button>
+        <mat-error> Please provide a valid password </mat-error>
+      </mat-form-field>
+    </div>
+
+    <mat-error class="error"
+      ><ng-container *ngIf="IsInvalidCredentials === true">
+        Please provide a valid username and password
+      </ng-container>
+    </mat-error>
+
+    <button mat-raised-button color="primary" [disabled]="!form.valid">
+      Login
+    </button>
+  </form>
+</mat-card>
